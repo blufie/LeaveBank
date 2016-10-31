@@ -1,0 +1,41 @@
+{ 
+	"biodata" : [{
+	"employeeNo": "001",
+	"firstname": "Dokun",
+	"lastname": "Aliu",
+	"department": "Software",
+	"email": "daliu@mail.com",
+	"password" : "pass1234",
+	"type" : "admin",
+	"leaveBalance" : 20},
+
+	{"employeeNo": "002",
+	"firstname": "Jimohla",
+	"lastname": "Salako",
+	"department": "Software",
+	"email": "jsalako@mail.com",
+	"password" : "pass1234",
+	"type" : "admin",
+	"leaveBalance" : 15},
+
+	{"employeeNo": "003",
+	"firstname": "Jimoh",
+	"lastname": "Salako",
+	"department": "Software",
+	"email": "josalako@mail.com",
+	"password" : "pass1234",
+	"type" : "user",
+	"leaveBalance" : 15},
+
+
+	{"employeeNo": "004",
+	"firstname": "S",
+	"lastname": "A",
+	"department": "Software",
+	"email": "sa@mail.com",
+	"password" : "pass",
+	"type" : "superuser",
+	"leaveBalance" : 15}
+]
+}
+
