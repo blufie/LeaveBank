@@ -1,0 +1,162 @@
+<ion-view view-title="Apply">
+  <ion-content class="padding" style="background-color:#ffffff;">
+
+  <br/><br/>
+  <div class="container"> 
+  <h3 align="center"> Enter Details </h3>
+  <br>
+   <div class="item item-divider"> Employee Details</div>
+      <br>
+
+<div class="container">
+  <div class="row">
+  <div class="col-md-6">
+         <div class="form-group">
+            <label for="appdate" class="col-lg-2 control-label" > <strong>Date </strong> </label>
+                        
+            <div class="col-lg-10">
+              <input type="date" class="form-control"  name="appdate" id="appdate"  placeholder="enter date">
+            </div>
+      </div>
+
+  </div>
+  <div class="col-md-6">
+     <div class="form-group">
+            <label for="empnum" class="col-lg-2 control-label" > <strong>Number</strong> </label>
+                        
+            <div class="col-lg-10">
+              <input type="text" class="form-control"  name="eppnum" id="empnum"  placeholder="">
+            </div>
+      </div>
+
+  </div>
+</div>
+</div>
+<br>
+
+  <div class="form-group">
+      <label class="item item-input item-select">
+          <div class="input-label">
+                    Department
+          </div>
+          <select>
+                    <option>Accounts</option>
+                    <option selected>Information Systems</option>
+                    <option>Finance</option>
+          </select>
+      </label>
+  </div>
+  <div class="container">
+   <div class="form-group"> 
+            <label for="empname" class="col-lg-2 control-label" > <strong>Name</strong> </label>
+                        
+            <div class="col-lg-10">
+              <input type="text" class="form-control"  name="empname" id="empname"  placeholder="">
+            </div>
+    </div>
+    </div>
+    <br>
+
+
+    <div class="form-group">
+      <label class="item item-input item-select">
+     
+          <div class="input-label">
+            Leave Type
+          </div>
+    
+          <select >
+                    <option>Previous Leave Balance</option>
+                    <option selected>Casual</option>
+                    <option>Annual</option>
+                    <option>Compassionate</option>
+                    <option>Exam</option>
+          </select>
+       </label>
+  </div>
+
+  <div class="container">
+    <div class="form-group"> 
+            <label for="baldays" class="col-lg-2 control-label" > <strong>Bal.</strong> </label>
+         
+                        
+            <div class="col-lg-10">
+              <input type="tel" class="form-control"  name="baldays" id="baldays"  placeholder="">
+            </div>
+    </div>
+  </div>
+    <br>
+
+      <div class="item item-divider"> Reliever Details </div>
+      <br>
+  <div class="row">
+  <div class="col-md-6">
+         <div class="form-group">
+            <label for="reliever" class="col-lg-2 control-label" > <strong>Name</strong> </label>
+                        
+            <div class="col-lg-10">
+              <input type="text" class="form-control"  name="rel" id="rel"  placeholder="">
+            </div>
+      </div>
+
+  </div>
+  <div class="col-md-6">
+     <div class="form-group">
+            <label for="relemail" class="col-lg-2 control-label" > <strong>Email</strong> </label>
+                        
+            <div class="col-lg-10">
+              <input type="email" class="form-control"  name="relemail" id="relemail"  placeholder="">
+            </div>
+      </div>
+
+  </div>
+</div>
+<br>
+
+<div class="item item-divider"> Duration </div>
+<br>
+
+
+  <div class="row">
+  <div class="col-md-6">
+         <div class="form-group">
+            <label for="startdate" class="col-lg-2 control-label" > <strong>Start </strong> </label>
+                        
+            <div class="col-lg-10">
+              <input type="date" class="form-control"  name="startdate" id="startdate"  placeholder="">
+            </div>
+      </div>
+
+  </div>
+  <div class="col-md-6">
+     <div class="form-group">
+            <label for="enddate" class="col-lg-2 control-label" > <strong> End</strong> </label>
+                        
+            <div class="col-lg-10">
+              <input type="date" class="form-control"  name="enddate" id="enddate"  placeholder="">
+            </div>
+      </div>
+
+  </div>
+</div>
+<br>
+
+ <div class="container">
+    <div class="form-group"> 
+    
+            <label for="baldays" class="col-lg-12 control-label item item-input" >
+                <textarea placeholder="Reason for request..." rows="15"></textarea>
+             </label>                  
+    </div>
+  </div>
+    <br>
+
+
+
+                <button class="button button-block button-outline button-balanced" ng-click="Enroll(enrol)">Save</button>
+          </div>
+    
+  </ion-content>
+   
+  </ion-content>
+</ion-view>

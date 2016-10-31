@@ -1,0 +1,79 @@
+<ion-view view-title="Create New User">
+  <!-- <div class="bar bar-subheader item-input-inset bar-light">
+                <label class="item-input-wrapper"><i class="icon ion-search placeholder-icon"></i>
+                <input type="search" ng-model="query"placeholder="Search">
+                </label>
+            </div> -->
+  <ion-content class="padding" style="background-color:#ffffff;">
+  <br>
+  <!-- <h3 align="center"> Details for New User </h3> -->
+<!--   <br> -->
+
+      
+         <div class="list list-inset">
+
+         <label class="item item-input">
+                        <input type="text" placeholder="Employee Number" ng-model="">
+                    </label><br/>
+                    <label class="item item-input">
+                        <input type="text" placeholder="Firstname" ng-model="">
+                    </label> <br/>
+                    
+           <label class="item item-input">
+                        <input type="text" placeholder="Lastname" ng-model="">
+                    </label><br/>
+                    
+                  <!--   <label class="item item-input">
+                        <input type="text" placeholder="Middlename" ng-model="">
+                    </label><br/> -->
+                    <label class="item item-input">
+                        <input type="email" placeholder="Email" ng-model="">
+                    </label><br/>
+                    <label class="item item-input">
+                        <input id="password" name="password" type="password" placeholder="Default Password" required>
+                         </label><br/> 
+          
+                          <label class="item item-input item-select">
+                  <div class="input-label">
+                    Department
+                  </div>
+                  <select>
+                    <option>Accounts</option>
+                    <option selected>HR</option>
+                    <option>IS</option>
+                    <option>PMO</option>
+                  </select>
+                </label><br>
+
+
+                     
+
+           <label class="item item-input">
+                        <input type="tel" placeholder="Phone number" ng-model="">
+                    </label><br/>
+                   
+                   <label class="item item-input item-select">
+                <div class="input-label">
+                  Auth.Type
+                </div>
+                <select>
+                  <option>Admin</option>
+                  <option selected>User</option>
+                  <option>SuperUser</option>
+                </select>
+              </label><br>
+
+
+           <label class="item item-input">
+                        <input type="text" placeholder="Leave Balance" ng-model="">
+                    </label><br/>
+
+
+
+
+                  <button class="button button-block button-outline button-balanced" ng-click="">
+      <strong> Enter</strong>
+      </button>
+</div>
+  </ion-content>
+</ion-view>

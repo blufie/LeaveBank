@@ -47,6 +47,61 @@ angular.module('starter', ['ionic'])
   })
 
 
+// report route
+ .state('main.reports', {
+    url:'main/reports',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/reports.html',
+        
+      }
+    }
+  })
+
+
+// apply for leave route
+   .state('main.apply', {
+    url:'main/apply',
+    views: {
+      'dash-tab': {
+        templateUrl: 'templates/apply.html',
+      }
+    }
+  })
+
+
+  // view people on leave route
+
+    .state('main.onleave', {
+    url:'main/onleave',
+    views: {
+      'dash-tab': {
+        templateUrl: 'templates/onleave.html',
+      }
+    }
+  })
+
+// create new user route
+ .state('main.newuser', {
+    url:'main/newuser',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/newuser.html',
+      }
+    }
+  })
+
+
+ // pending on admin view route
+ .state('main.pendings', {
+    url:'main/pendings',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/pendings.html',
+      }
+    }
+  })
+
   // .state('main.public', {
   //   url:'main/public',
   //   views: {
@@ -57,6 +112,15 @@ angular.module('starter', ['ionic'])
   //   }
   // })
 
+// people onleave on admin view route
+ .state('main.onleaveII', {
+    url:'main/onleaveII',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/onleaveII.html',
+      }
+    }
+  })
 
     .state('main.superuser', {
     url:'main/superuser',
