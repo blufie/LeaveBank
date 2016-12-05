@@ -1,0 +1,31 @@
+<ion-view view-title="Pending Detail">
+
+      <ion-content ><ion-refresher on-refresh="doRefresh()"></ion-refresher>
+      <br/>
+       <div class="container">
+     <a href="#main/superuser"> <img id="button" src="img/tap.png"> </a>
+</div>
+               <div class="bar item-input-inset bar-light">
+                <label class="item-input-wrapper"><i class="icon ion-search placeholder-icon"></i>
+                <input type="search" ng-model="query"placeholder="Search">
+                </label>
+            </div>
+            <br>
+<!--               <a class="button button-full button-positive" href="#main/superuser"> Back </a>
+ -->          <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+              <ion-item ng-class="{'star': item.star}" ng-repeat='item in application | filter: query'  href="#/main/pendingsIII/{{ item.user_appDate }}">
+                          <h1>{{item.user_Uname}} </h1>
+                          <h4>Dept: {{item.user_dept}}</h4>
+                          <h4>Leave Type: {{item.user_leaveType}}</h4>
+                          <h4>Reliever's Name: {{item.user_relName}} </h4>
+                          <h4>Reliever's Email: {{item.user_relEmail}}</h4>
+                          <h4>{{item.user_status}}</h4>
+                          <p style="text-align: right; color: green"><b>Tap to view details</b></p>
+                       <!--    <p align="justify">{{item.user_ | limitTo: 30}}
+                          {{ item.reason.length > 70 ? '&hellip;' : '...'}}</p> -->
+             </ion-item>
+       </ion-list>
+      </ion-content>
+    </ion-view>
+    
+    

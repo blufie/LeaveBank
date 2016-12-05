@@ -1,0 +1,24 @@
+<ion-view view-title="Delete User" name="admin-view">
+  <ion-content class="padding">
+    <div class="container">
+      <a  href="#main/admin"> <img id="button" src="img/tap.png"> </a>
+</div>
+
+<div class="container">
+
+      <form ng-submit="DeleteData(user_email)" class="form-horizontal" novalidate>
+
+      <div class="form-group">
+          <label for="user_email">
+          <!--  Email: -->
+          </label>
+           <input type="user_email" name="user_email" id="user_email" class="form-control" placeholder="Email" ng-model="user_email" required>
+
+           <button class="button button-block button-positive" ng-click="showAlert()">Remove User</button>
+          </form>
+ 
+    </div>
+
+    <!--   <a class="button button-full button-positive" href="#main/admin" ng-click="showAlert()"> Back </a>    -->
+  </ion-content>
+</ion-view>

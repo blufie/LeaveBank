@@ -8,5 +8,6 @@ angular.module('starter')
 .constant('USER_ROLES', {
 	admin: 'admin_role',
 	public: 'public',
-	superuser: 'admin_role'
+	superuser: 'superuser_role',
+	gmd: 'gmd_role'
 });

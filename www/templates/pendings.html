@@ -1,58 +1,40 @@
 <ion-view view-title="Pending Detail">
-   <div class="bar bar-subheader item-input-inset bar-light">
+
+
+      <ion-content class="has-subheader"><ion-refresher on-refresh="doRefresh()"></ion-refresher>
+  <div class="container">
+     <a href="#main/admin"> <img id="button" src="img/tap.png"> </a>
+</div>
+
+      <br>
+              <!-- <div class="bar bar-subheader item-input-inset bar-light">
                 <label class="item-input-wrapper"><i class="icon ion-search placeholder-icon"></i>
                 <input type="search" ng-model="query"placeholder="Search">
                 </label>
-            </div>
-  <ion-content class="padding" style="background-color:#ffffff;">
-
-  <br/><br/>
- 
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<div class="container">
-
-<div>
-                <button class="button button-block button-outline button-balanced" ng-click="Enroll(enrol)"><strong>Accept</strong></button>
-          </div>
-
-<div>
-                <button class="button button-block button-outline button-balanced" ng-click="Enroll(enrol)"><strong>Decline</strong></button>
-          </div>
-  </div>  
-  </ion-content>
-</ion-view>
+            </div> -->
+   
+            
+              
+          <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+              <ion-item ng-class="{'star': item.star}" ng-repeat='item in application | filter: query'  href="#/main/pendings/{{ item.user_appDate }}">
+                          <h1>{{item.user_Uname}} </h1>
+                          <h4>Dept: {{item.user_dept}}</h4>
+                          <h4>Leave Type: {{item.user_leaveType}}</h4>
+                          <h4>No of Leave Days:{{item.user_LeaveDays}}</h4>
+                          <h4>Reliever's Name: {{item.user_relName}} </h4>
+                          <h4>Reliever's Email: {{item.user_relEmail}}</h4>
+                          <h4>{{item.user_status}}</h4>
+                          <p style="text-align: right; color: green"><b>Tap to view details</b></p>
+                       <!--    <p align="justify">{{item.user_ | limitTo: 30}}
+                          {{ item.reason.length > 70 ? '&hellip;' : '...'}}</p> -->
+                      <button class="button button-clear icon ion-star button-assertive" ng-click="toggleStar(item)" ng-show="item.star"></button>
+                      <ion-option-button class="button-calm" ng-click="toggleStar(item)"><i class="icon ion-star"></i></ion-option-button>
+                      <ion-option-button class="button-energized" ng-click="(item)"><i class="icon ion-android-share-alt"></i></ion-option-button>
+                      <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button>
+                      <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+             </ion-item>
+       </ion-list>
+      </ion-content>
+    </ion-view>
+    
+    

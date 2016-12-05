@@ -4,15 +4,18 @@
   </ion-nav-buttons>
  
   <ion-content class="padding">
-    <div class="row"><div class="col text-center">
+    <div class="container"><div class="col text-center">
       <h3 class="title">Welcome {{username}}!</h3>
       <h4>Your Leave Balance is: {{leavebalance}} days</h4>
       <br><br><br>
-      <a class="button button-full button-positive" href="#main/apply">
+      <a class="button button-full button-positive" href="#main/apply" ng-click="showLeaveApp()" >
        Apply For Leave
       </a>
       <a class="button button-full button-energized" href="#main/onleave">
        View Staff On Leave
+      </a>
+      <a class="button button-full button-royal" href="#main/password" >
+       Update Password
       </a>
       <button class="button button-full button-assertive" ng-click="">
        Return from Leave
@@ -22,3 +25,5 @@
     </div></div>
   </ion-content>
 </ion-view>
+
+

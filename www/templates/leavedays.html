@@ -1,0 +1,34 @@
+<ion-view view-title="Update User Leave Balance" name="admin-view">
+  <ion-content class="padding">
+    <div class="container">
+      <a  href="#main/admin"> <img id="button" src="img/tap.png"> </a>
+</div>
+
+<div class="container">
+
+      <!-- <form ng-submit="DeleteData(user_email)" class="form-horizontal"> -->
+          <form  class="form-horizontal" ng-submit="Update(leaveBalance.$valid)" name="leaveBalance" novalidate>  
+      <div class="form-group">
+
+        <label for="user_name">
+          <!--  Email: -->
+          </label>
+
+
+                 <input type="user_name" name="user_name" id="user_name" class="form-control" placeholder="User Email!" ng-model="leaveModel.user_name" required>
+
+          <label for="user_leaveBalance">
+          <!--  Email: -->
+          </label>
+
+          <input type="user_leaveBalance" name="user_leaveBalance" id="user_leaveBalance" class="form-control" placeholder="Leave Balance!" ng-model="leaveModel.user_leaveBalance" required>
+
+
+           <button class="button button-block button-positive" ng-click="show()" ng-disabled="leaveBalance.$invalid">Update Leave Balance!</button>
+          </form>
+ 
+    </div>
+
+    <!--   <a class="button button-full button-positive" href="#main/admin" ng-click="showAlert()"> Back </a>    -->
+  </ion-content>
+</ion-view>

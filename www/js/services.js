@@ -29,15 +29,19 @@ angular.module('starter')
 
     var dt = $.jStorage.get("dataserve");
 
-    if (dt.type == 'admin'){
+    if (dt.user_authtype == 'Admin'){
       role = USER_ROLES.admin
     }
-    if (dt.type == 'user') {
+    if (dt.user_authtype == 'User') {
       role = USER_ROLES.public
     }
 
-    if (dt.type == 'superuser') {
+    if (dt.user_authtype == 'SuperUser') {
       role = USER_ROLES.superuser
+    }
+
+     if (dt.user_authtype == 'GMD') {
+      role = USER_ROLES.gmd
     }
 
 
@@ -57,29 +61,30 @@ angular.module('starter')
   var login = function(name, pw){
     return $q(function(resolve, reject){
 
-      $http.get('js/data.json').success(function(biodata){
+      //$http.get('js/data.json').success(function(biodata){
 
-        console.log("get json");
+        $http.get('http://localhost:3000/timeoffapi/biodatas').success(function(biodatas){
 
-        //$scope.bio = biodata;
-        console.log("bio is log");
         var count = 0, ind= 0;
         //console.log("count");
-        //console.log(biodata.biodata[0].lastname);
+        console.log(biodatas.biodatas[0].user_password);
+        console.log(pw);
+        
 
-
-        for (var key in biodata.biodata) {
-          //console.log(biodata.biodata[key].lastname);
-         if ( name == biodata.biodata[key].email && pw == biodata.biodata[key].password) {
-           //console.log("login match");
-           count ++;
-           //console.log(count);
-            $.jStorage.set("dataserve", biodata.biodata[key]);
+        for (var key in biodatas.biodatas) {
+        console.log(biodatas.biodatas[key].user_firstname);
+         if ( name == biodatas.biodatas[key].user_email && pw == biodatas.biodatas[key].user_password) {
+                   count ++;
+      
+            $.jStorage.set("dataserve", biodatas.biodatas[key]);
             }
-            //console.log(biodata);
+            //   console.log(user_firstname);
+            //    console.log(user_authtype);
+            // console.log(biodatas);
+
         }
 
-        //console.log(count);
+        console.log(count);
 
       if (count == 1)
       {

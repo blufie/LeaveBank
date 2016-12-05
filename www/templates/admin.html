@@ -3,29 +3,46 @@
       Strictly for Admin Users.
   </ion-content>
 </ion-view>  -->
- <ion-view view-title="Admin" name="dashboard-view">
+ <ion-view view-title="Admin" >
+  <ion-nav-buttons side="right">
+    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+  </ion-nav-buttons>
  
   <ion-content class="padding">
-    <div class="row"><div class="col text-center">
-      <h3 class="title">Welcome HR</h3>
-      <br><br><br>
-      <a class="button button-full button-positive" href="#main/newuser">
+    <div class="container"><div class="col text-left">
+      <h3 class="title">Welcome, HCD</h3>
+     
+      <div align="center">
+        <img  src="img/humanresources.jpg">
+        
+      </div>
+     
+      <a class="button button-full button-positive" href="#main/newuser"><i class="icon ion-person placeholder-icon"></i>
        Create User
       </a>
-      <a class="button button-full button-energized" href="#main/pendings">
+      <a class="button button-full button-balanced" href="#main/otherusers"><i class="icon ion-android-contact placeholder-icon"></i>
+      Create Admin/G.M.D/SuperUser
+      </a>
+      <a class="button button-full button-energized" href="#main/pendings"><i class="icon ion-android-checkbox-outline"></i>
        Pending Approvals
       </a>
-      <a class="button button-full button-balanced" href="#main/onleaveII">
+      <a class="button button-full button-calm" href="#main/onleaveII"><i class="icon ion-ios-people"></i>
        View Staff on Leave
       </a>
-       <a class="button button-full button-royal" ng-click="" href="#main/reports" >
+       <a class="button button-full button-royal" ng-click="" href="#main/reports" ><i class="icon ion-pie-graph"></i>
       Generate Reports
       </a>
-       <button class="button button-full button-assertive" ng-click="">
+      <a class="button button-full button-positive" href="#main/leavedays"><i class="icon ion-compose"></i>
+        Update User Leave Balance
+      </a>
+       <a class="button button-full button-assertive" href="#main/deleteUser"><i class="icon ion-android-delete"></i>
         Remove User
-      </button>
+      </a>
       <br><br>
       {{response}}
     </div></div>
   </ion-content>
 </ion-view>
+
+
+      

@@ -1,0 +1,62 @@
+<ion-view view-title="Create Admin">
+  <!-- <div class="bar bar-subheader item-input-inset bar-light">
+                <label class="item-input-wrapper"><i class="icon ion-search placeholder-icon"></i>
+                <input type="search" ng-model="query"placeholder="Search">
+                </label>
+            </div> -->
+
+    <ion-nav-bar  class="bar-balanced">
+      <ion-nav-back-button>
+      <i class = "icon ion-arrow-left-c"></i>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+  <ion-content class="padding" style="background-color:#ffffff;">
+
+    <!-- <div class="container">
+     <a href="#main/admin"> <img id="button" src="img/tap.png"> </a>
+</div> -->
+  <!-- <h3 align="center"> Details for New User </h3> -->
+<!--   <br> -->
+      <form ng-submit="onSubmit(newUserForm.$valid)" name="newUserForm" novalidate>
+
+         <div class="list list-inset">
+
+                    <label for="firstname" class="item item-input">
+                        <input type="text" name="firstname" id="firstname" placeholder="Firstname" ng-model="userModel.firstname" required>
+                    </label> <br/>
+                    
+           <label for="lastname" class="item item-input">
+                <input type="text" name="lastname" id="lastname" placeholder="Lastname" ng-model="userModel.lastname" required>
+            </label><br/>
+                    
+            <label for="email" class="item item-input">
+              <input type="email" name="email" id="email" placeholder="Email" ng-model="userModel.email" required>
+            </label><br/>
+                    
+            <label for="password" class="item item-input">
+              <input id="password" name="password" type="password" placeholder="Default Password"  ng-model="userModel.password" required>
+            </label><br/> 
+
+           <label for="phoneNumber" class="item item-input">
+              <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone number" ng-model="userModel.phoneNumber" required>
+            </label><br>
+                   
+           <label for="authtype" class="item item-input item-select">
+              <div class="input-label">
+                  Auth.Type
+              </div>
+                <select name="authtype" id="authtype" ng-model="userModel.authtype" required>
+                  <option>Admin</option>
+                  <option selected>User</option>
+                  <option>SuperUser</option>
+                  <option>GMD</option>
+                </select>
+            </label><br>
+
+                  <button class="button button-block button-outline button-balanced" type="submit" ng-click="showAlert()"  ng-disabled="newUserForm.$invalid">
+      <strong> Create</strong>
+      </button>
+</div>
+</form>
+  </ion-content>
+</ion-view>

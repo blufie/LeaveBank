@@ -1,58 +1,28 @@
-<ion-view view-title="Pending Detail">
+<ion-view view-title="Staff On Leave">
    <div class="bar bar-subheader item-input-inset bar-light">
                 <label class="item-input-wrapper"><i class="icon ion-search placeholder-icon"></i>
                 <input type="search" ng-model="query"placeholder="Search">
                 </label>
             </div>
   <ion-content class="padding" style="background-color:#ffffff;">
+  <br>
+  <br>
+      <a  href="#main/dash"> <img id="button" src="img/tap.png"> </a>
+       <br>
+  <br>
+               <!-- <a class="button button-full button-positive" href="#main/dashboard"> Back </a> -->
 
-  <br/><br/>
- 
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<hr>
-<br>
-<div class="container">
-
-<!-- <div>
-                <button class="button button-block button-outline button-balanced" ng-click="Enroll(enrol)">Accept</button>
-          </div>
-
-<div>
-                <button class="button button-block button-outline button-balanced" ng-click="Enroll(enrol)">Decline</button>
-          </div>
-  </div>   -->
+      <!-- <div class="item-text-wrap" ng-repeat="item in application | filter: { user_status: whichapplication }"> -->
+            <!-- <div class="item-text-wrap" ng-repeat='item in application | filter: query'  href="#/main/pendings/{{ item.user_leaveType }}"> -->
+                    <ion-item ng-class="{'star': item.star}" ng-repeat='item in application | filter: query' >
+                          <h1>{{item.user_Uname}} </h1>
+                          <h4>Reliever's Name: {{item.user_relName}} </h4>
+                          <h4>Reliever's Email: {{item.user_relEmail}}</h4>
+                          <h4>Start Date: {{item.user_startDate}}</h4>
+                          <h4>End Date: {{item.user_endDate}}</h4>
+                          <h4>{{item.user_status}}</h4>
+                          </ion-item>
+             <!-- </div> -->
+      
   </ion-content>
 </ion-view>

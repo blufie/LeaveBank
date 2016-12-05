@@ -1,71 +1,55 @@
+
 <ion-view view-title="Apply">
+
   <ion-content class="padding" style="background-color:#ffffff;">
+<div class="well">
+  <!-- <br/><br/> -->
+        <a  href="#main/dash"> <img id="button" src="img/tap.png"> </a>
 
-  <br/><br/>
   <div class="container"> 
-  <h3 align="center"> Enter Details </h3>
-  <br>
-   <div class="item item-divider"> Employee Details</div>
-      <br>
+  <hr>
+  <h3 align="center"> Leave Form</h3>
+  <hr>
 
+<form ng-submit="onSubmit(leaveForm.$valid)" name="leaveForm" novalidate>
 <div class="container">
-  <div class="row">
-  <div class="col-md-6">
-         <div class="form-group">
-            <label for="appdate" class="col-lg-2 control-label" > <strong>Date </strong> </label>
-                        
-            <div class="col-lg-10">
-              <input type="date" class="form-control"  name="appdate" id="appdate"  placeholder="enter date">
-            </div>
-      </div>
+<!--  <a class="button button-full button-positive" href="#main/dashboard"> Back </a> -->
 
-  </div>
-  <div class="col-md-6">
-     <div class="form-group">
-            <label for="empnum" class="col-lg-2 control-label" > <strong>Number</strong> </label>
-                        
-            <div class="col-lg-10">
-              <input type="text" class="form-control"  name="eppnum" id="empnum"  placeholder="">
-            </div>
-      </div>
-
-  </div>
-</div>
-</div>
 <br>
-
+<br>
   <div class="form-group">
-      <label class="item item-input item-select">
+      <label for="dept" class="item item-input item-select">
           <div class="input-label">
                     Department
           </div>
-          <select>
+          <select  name="dept" class="form-control" id="dept"  ng-model="applyModel.dept" required>
                     <option>Accounts</option>
                     <option selected>Information Systems</option>
                     <option>Finance</option>
           </select>
       </label>
   </div>
-  <div class="container">
+  <!-- <div class="container">
    <div class="form-group"> 
-            <label for="empname" class="col-lg-2 control-label" > <strong>Name</strong> </label>
+            <label for="name" class="col-lg-2 control-label" > <strong>Employee Name</strong> </label>
                         
             <div class="col-lg-10">
-              <input type="text" class="form-control"  name="empname" id="empname"  placeholder="">
+             <br>
+              <input type="text" class="form-control"  name="name" id="name"  ng-model="applyModel.name" placeholder="" required="required">
             </div>
     </div>
-    </div>
+    </div> -->
     <br>
 
 
     <div class="form-group">
-      <label class="item item-input item-select">
+      <label for="leaveType" class="item item-input item-select">
      
           <div class="input-label">
             Leave Type
           </div>
     
-          <select >
+          <select  name="leaveType" id="leaveType" class="form-control" ng-model="applyModel.leaveType" required>
                     <option>Previous Leave Balance</option>
                     <option selected>Casual</option>
                     <option>Annual</option>
@@ -75,37 +59,40 @@
        </label>
   </div>
 
-  <div class="container">
-    <div class="form-group"> 
-            <label for="baldays" class="col-lg-2 control-label" > <strong>Bal.</strong> </label>
+ <!--  <div class="container">
+    <div class="form-group" align="center"> 
+            <label for="leaveBalance" class="col-lg-2 control-label" > <strong> Leave Balance </strong> </label>
          
                         
             <div class="col-lg-10">
-              <input type="tel" class="form-control"  name="baldays" id="baldays"  placeholder="">
+             <br>
+              <input type="tel" class="form-control"  name="leaveBalance" id="leaveBalance"  ng-model="applyModel.leaveBalance" placeholder="" required="required">
             </div>
     </div>
-  </div>
+  </div> -->
     <br>
 
-      <div class="item item-divider"> Reliever Details </div>
+      <div class="item item-divider" align="center"> Reliever Details </div>
       <br>
   <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6" align="center">
          <div class="form-group">
-            <label for="reliever" class="col-lg-2 control-label" > <strong>Name</strong> </label>
+            <label for="relName" class="col-lg-2 control-label" > <strong> Reliever's Name </strong> </label>
                         
             <div class="col-lg-10">
-              <input type="text" class="form-control"  name="rel" id="rel"  placeholder="">
+             <br>
+              <input type="text" class="form-control"  name="relName" id="relName"  placeholder=""  ng-model="applyModel.relName" required>
             </div>
       </div>
 
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" align="center">
      <div class="form-group">
-            <label for="relemail" class="col-lg-2 control-label" > <strong>Email</strong> </label>
+            <label for="relEmail" class="col-lg-2 control-label" > <strong>Reliever's Email</strong> </label>
                         
-            <div class="col-lg-10">
-              <input type="email" class="form-control"  name="relemail" id="relemail"  placeholder="">
+            <div class="col-lg-10" >
+             <br>
+              <input type="email" class="form-control"  name="relEmail" id="relEmail"    placeholder="" ng-model="applyModel.relEmail" required>
             </div>
       </div>
 
@@ -113,50 +100,79 @@
 </div>
 <br>
 
-<div class="item item-divider"> Duration </div>
+<div class="item item-divider" align="center"> Duration </div>
 <br>
 
-
-  <div class="row">
-  <div class="col-md-6">
-         <div class="form-group">
-            <label for="startdate" class="col-lg-2 control-label" > <strong>Start </strong> </label>
+  <!-- <div class="row"> -->
+  <div class="container">
+         <div class="form-group" align="center" >
+            <label for="startDate" class="col-lg-2 control-label"  > <strong> Your Leave Balance is: {{leavebalance}} days  </strong> </label>
                         
             <div class="col-lg-10">
-              <input type="date" class="form-control"  name="startdate" id="startdate"  placeholder="">
+             <br>
+             <!-- {{leavebalance}} -->
             </div>
       </div>
 
-  </div>
-  <div class="col-md-6">
-     <div class="form-group">
-            <label for="enddate" class="col-lg-2 control-label" > <strong> End</strong> </label>
-                        
-            <div class="col-lg-10">
-              <input type="date" class="form-control"  name="enddate" id="enddate"  placeholder="">
-            </div>
-      </div>
 
+   <div class="form-group">
+      <label for="LeaveDays" class="item item-input item-select">
+
+          <div class="input-label">
+            Number of Days:
+          </div>
+    <br>
+         <!--  <input type="number" id="LeaveDays" name="LeaveDays" min="1" max="{{leavebalance}}" step="1" value="10" ng-model="applyModel.LeaveDays" placeholder="{{leavebalance}}" required> -->
+          <select id="LeaveDays" name="LeaveDays"  ng-model="applyModel.LeaveDays" ng-click="dateShow()" required> </select>
+
+       </label>
   </div>
 </div>
+
+
+    <!-- <div class="row"> -->
+  <div class="col-md-6" align="center">
+         <div class="form-group">
+            <label for="startDate" class="col-lg-2 control-label" > <strong> Start Date </strong> </label>
+                        
+            <div class="col-lg-10">
+             <br>
+              <input type="text" class="form-control"  name="startDate" id="startDate"  placeholder="dd/mm/yyyy"  ng-model="applyModel.startDate" required>
+            </div>
+      </div>
+  </div>
+  <div class="col-md-6" align="center">
+     <div class="form-group">
+            <label for="endDate" class="col-lg-2 control-label" > <strong> End Date </strong> </label>
+                        
+            <div class="col-lg-10" >
+             <br>
+               <input type="text" class="form-control"  name="endDate" id="endDate"  placeholder="dd/mm/yyyy"  ng-model="applyModel.endDate" required>
+            </div>
+      </div>
+
+  </div>
+<!-- </div> -->
 <br>
 
  <div class="container">
     <div class="form-group"> 
     
-            <label for="baldays" class="col-lg-12 control-label item item-input" >
-                <textarea placeholder="Reason for request..." rows="15"></textarea>
+            <label for="reason" class="col-lg-12 control-label item item-input" >
+                <textarea placeholder="Reason for request..." rows="15"  name="reason" id="reason"  ng-model="applyModel.reason" required></textarea>
              </label>                  
     </div>
   </div>
     <br>
-
-
-
-                <button class="button button-block button-outline button-balanced" ng-click="Enroll(enrol)">Save</button>
+                <button class="button button-block button-outline button-balanced" ng-click="showAlert()" ng-disabled="leaveForm.$invalid">Submit</button>
           </div>
-    
-  </ion-content>
-   
+
+         
+</div>
+</form>
+<!--  <pre>{{ leaveForm | json }} </pre>    --> 
+
+
+ </div>
   </ion-content>
 </ion-view>

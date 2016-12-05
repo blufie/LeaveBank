@@ -1,0 +1,50 @@
+<ion-view view-title="Details">
+  <ion-content>
+   <br>
+  <div class="container">
+      <a  href="#main/pendingsIII"> <img id="button" src="img/tap.png"> </a>
+</div>
+    <div class="list card padding">
+      <div class="item item-divider" align="center">
+         Application Details
+       </div>
+<!--                <a class="button button-full button-positive" href="#main/pendingsIII"> Back </a>
+ -->
+      <div class="item-text-wrap" ng-repeat="item in application | filter: { user_appDate: whichapplication }">
+            <!-- <div class="item-text-wrap" ng-repeat='item in application | filter: query'  href="#/main/pendings/{{ item.user_leaveType }}"> -->
+                           <h1>{{item.user_Uname}} </h1>
+                          <b><h3 id="useremail">{{item.user_useremail}}</h3></b>
+                          <h4>Leave Type: {{item.user_leaveType}}</h4>
+                          <h4>Dept: {{item.user_dept}}</h4>
+                          <h4>Leave Balance: <font id="leavedays"> {{item.user_leavebalance}}</font></h4>
+                          <h4>No of Leave Days:<font id="days"> {{item.user_LeaveDays}}</font></h4>
+                          <h4>Reliever's Name: {{item.user_relName}} </h4>
+                          <h4 >Reliever's Email:<font id="email">{{item.user_relEmail}}</font></h4>
+                          <h4>Start Date: {{item.user_startDate | date : "dd/MM/y"}}</h4>
+                          <h4>End Date: {{item.user_endDate | date : "dd/MM/y"}}</h4>
+                          <h4 id="status"> {{item.user_status}}</h4>
+
+                          <h4>Reason:</h4>
+                          <p align="justify">{{item.user_reason }}</p>
+             </div>
+
+                       <div class="container">
+        <div class="panel panel-danger">
+  <div class="panel-body"><p style="color:red; text-align: justify;"><b>Check to verify if the number of Leave Days corresponds with the days between the Start and End Dates!</b></p></div>
+
+</div>
+</div>
+
+            <div class="item item-divider" align="center">
+            <div>
+                <button class="button button-block button-outline button-balanced" ng-click="Accept()"><strong>Accept</strong></button>
+          </div>
+
+<div>
+                <button class="button button-block button-outline button-balanced" ng-click="SendRes()"><strong>Decline</strong></button>
+          </div>
+  </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

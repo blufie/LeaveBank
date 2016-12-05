@@ -1,0 +1,30 @@
+<ion-view view-title="Pending Detail">
+      <br>
+       <div class="container">
+     <a href="#main/gmd"> <img id="button" src="img/tap.png"> </a>
+</div>
+             
+               <div class="bar item-input-inset bar-light">
+                <label class="item-input-wrapper"><i class="icon ion-search placeholder-icon"></i>
+                <input type="search" ng-model="query"placeholder="Search">
+                </label>
+            </div>
+                <ion-list>
+              <ion-item ng-class="{'star': item.star}" ng-repeat='item in application | filter: query'  href="#/main/pendingsIV/{{ item.user_appDate }}">
+                          <h1>{{item.user_Uname}} </h1>
+                          <h4>Dept: {{item.user_dept}}</h4>
+                          <h4>No of Leave Days:{{item.user_LeaveDays}}</h4>
+                          <h4>Reliever's Name: {{item.user_relName}} </h4>
+                          <h4>Reliever's Email: {{item.user_relEmail}}</h4>
+                          <h4>{{item.user_status}}</h4>
+                          <p style="text-align: right; color: green"><b>Tap to view details</b></p>
+                       <!--    <p align="justify">{{item.user_ | limitTo: 30}}
+                          {{ item.reason.length > 70 ? '&hellip;' : '...'}}</p> -->
+                     
+             </ion-item>
+       </ion-list>
+       <div id="spin" align="center" class="outer" ng-hide="loader"><ion-spinner class="spinner-energized" icon="lines"></ion-spinner><br/>Loading</div>
+      </ion-content>
+    </ion-view>
+    
+    

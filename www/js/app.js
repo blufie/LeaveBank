@@ -24,7 +24,7 @@ angular.module('starter', ['ionic'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, USER_ROLES){
+.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
   $stateProvider
   .state('login', {
     url:'/login',
@@ -56,6 +56,18 @@ angular.module('starter', ['ionic'])
         
       }
     }
+  }) 
+
+
+ // remove user route
+ .state('main.deleteUser', {
+    url:'main/deleteUser',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/deleteUser.html',
+        controller: 'DeleteUserCtrl'  
+      }
+    }
   })
 
 
@@ -65,9 +77,19 @@ angular.module('starter', ['ionic'])
     views: {
       'dash-tab': {
         templateUrl: 'templates/apply.html',
+        controller: 'ApplyLeaveCtrl'
       }
     }
   })
+
+
+     .state('.successpage', {
+    url:'/successpage',
+    templateUrl: 'templates/successpage.html',
+        controller: 'AppleaveCtrl'
+  })
+
+
 
 
   // view people on leave route
@@ -77,6 +99,7 @@ angular.module('starter', ['ionic'])
     views: {
       'dash-tab': {
         templateUrl: 'templates/onleave.html',
+        controller: 'LeaveCtrller'
       }
     }
   })
@@ -87,6 +110,19 @@ angular.module('starter', ['ionic'])
     views: {
       'admin-tab': {
         templateUrl: 'templates/newuser.html',
+        controller: 'NewUserCtrl'
+      }
+    }
+  })
+
+
+ // create new user route
+ .state('main.otherusers', {
+    url:'main/otherusers',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/otherusers.html',
+         controller: 'NewUserCtrl'
       }
     }
   })
@@ -98,9 +134,92 @@ angular.module('starter', ['ionic'])
     views: {
       'admin-tab': {
         templateUrl: 'templates/pendings.html',
+        controller:'hrCtrller'
       }
     }
   })
+
+
+
+
+// pending approvals for superuser
+  // .state('main.pendingsII', {
+  //   url:'main/pendingsII',
+  //   views: {
+  //     'superuser-tab': {
+  //       templateUrl: 'templates/pendingsII.html',
+  //       controller:'superuserCtrller'
+  //     }
+  //   }
+  // })
+
+
+  // pending approvals for superuser
+  .state('main.pendingsIII', {
+    url:'main/pendingsIII',
+    views: {
+      'superuser-tab': {
+        templateUrl: 'templates/pendingsIII.html',
+        controller:'SuperCtrller'
+      }
+    }
+  })
+
+
+
+ // pending approvals for G.M.D
+  .state('main.pendingsIV', {
+    url:'main/pendingsIV',
+    views: {
+      'gmd-tab': {
+        templateUrl: 'templates/pendingsIV.html',
+        controller:'GMDCtrller'
+      }
+    }
+  })
+
+
+ .state('main.userdetails', {
+    url:'main/pendings/:aId',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/userdetails.html',
+        controller:'AppleaveCtrl'
+
+      }
+    }
+  })
+
+  .state('main.userdetailsII', {
+    url:'main/pendingsII/:aId',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/userdetailsII.html',
+        controller:'DashCtrller'
+      }
+    }
+  })
+
+   .state('main.userdetailsIII', {
+    url:'main/pendingsIII/:aId',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/userdetailsIII.html',
+        controller:'SuperCtrller'
+      }
+    }
+  })
+
+     .state('main.userdetailsIV', {
+    url:'main/pendingsIV/:aId',
+    views: {
+      'admin-tab': {
+        templateUrl: 'templates/userdetailsIV.html',
+        controller:'GMDCtrller'
+      }
+    }
+  })
+
 
   // .state('main.public', {
   //   url:'main/public',
@@ -118,30 +237,108 @@ angular.module('starter', ['ionic'])
     views: {
       'admin-tab': {
         templateUrl: 'templates/onleaveII.html',
+        controller: 'LeaveCtrller'
       }
     }
   })
+
+
+  //on leave route for superuser
+    .state('main.onleaveIII', {
+    url:'main/onleaveIII',
+    views: {
+      'superuser-tab': {
+        templateUrl: 'templates/onleaveIII.html',
+        controller: 'LeaveCtrller'
+      }
+    }
+  })
+
+
+     //on leave route for superuser
+    .state('main.onleaveIV', {
+    url:'main/onleaveIV',
+    views: {
+      'gmd-tab': {
+        templateUrl: 'templates/onleaveIV.html',
+        controller: 'LeaveCtrller'
+      }
+    }
+  })
+
+
 
     .state('main.superuser', {
     url:'main/superuser',
     views: {
       'superuser-tab': {
-        templateUrl: 'templates/superuser.html'
-       
-      },
+        templateUrl: 'templates/superuser.html',
+        controller:'DashCtrl'   
+      }
     },
      data: {
-      authorizedRoles: [USER_ROLES.admin]
+      authorizedRoles: [USER_ROLES.superuser]
     }
   })
 
+
+
+ // .state('main.gmd', {
+ //    url:'main/gmd',
+ //    views: {
+ //      'gmd-tab': {
+ //        templateUrl: 'templates/gmd.html',
+ //        controller:'LeaveCtrller'   
+ //      }
+ //    },
+ //     data: {
+ //      authorizedRoles: [USER_ROLES.gmd]
+ //    }GMDCtrller
+ //  })
+   
+
+   .state('main.gmd', {
+    url:'main/gmd',
+    views: {
+      'gmd-tab': {
+        templateUrl: 'templates/gmd.html',
+        controller:'DashCtrl'   
+      }
+    },
+     data: {
+      authorizedRoles: [USER_ROLES.gmd]
+    }
+  })
+
+   // change password route
+   .state('main.password', {
+    url:'main/password',
+    views: {
+      'dash-tab': {
+        templateUrl: 'templates/password.html',
+        controller: 'ChangePwd'
+      }
+    }
+  })
+
+      // update user leave days route
+   .state('main.leavedays', {
+    url:'main/leavedays',
+    views: {
+      'dash-tab': {
+        templateUrl: 'templates/leavedays.html',
+        controller: 'LeaveBalance'
+      }
+    }
+  })
    
 
   .state('main.admin', {
     url:'main/admin',
     views: {
       'admin-tab': {
-        templateUrl: 'templates/admin.html'
+        templateUrl: 'templates/admin.html',
+        controller:'DashCtrl'
         
       }
     },
@@ -153,7 +350,7 @@ angular.module('starter', ['ionic'])
 
   $urlRouterProvider.otherwise(function ($injector, $location){
     var $state = $injector.get("$state");
-    $state.go("main.dash");
+     $state.go("login");
   });
 
 })
@@ -165,7 +362,8 @@ angular.module('starter', ['ionic'])
           var authorizedRoles = next.data.authorizedRoles;
           if (!AuthService.isAuthorized(authorizedRoles)) {
            // event.preventDefault();
-            $state.go($state.current, {}, {reload: true});
+           
+            // $state.go($state.current, {}, {reload: true});
             $rootScope.$broadcast(AUTH_EVENTS.notauthorized);
           }
         }
