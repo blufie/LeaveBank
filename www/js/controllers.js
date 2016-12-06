@@ -300,7 +300,7 @@ var email = $("#email").text();
 // Apply for leave Controller 
 .controller('ApplyLeaveCtrl', function($scope, $http,$location,$state,$ionicPopup,$window){
 
-$scope.dateShow = function(){
+
                   var dt = $.jStorage.get("dataserve");
                   console.log(dt.user_leave_balance);
                           var LeaveBal = dt.user_leave_balance;
@@ -314,8 +314,7 @@ $scope.dateShow = function(){
                        opt.value = i;
                        opt.innerHTML = i;
                        select.appendChild(opt);
-                    }
-      };   
+                    }   
 
 
     $scope.applyModel = {};

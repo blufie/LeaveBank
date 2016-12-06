@@ -1,5 +1,10 @@
 
 <ion-view view-title="Apply">
+<ion-nav-bar  class="bar-balanced">
+      <ion-nav-back-button>
+      <i class = "icon ion-arrow-left-c"></i>
+      </ion-nav-back-button>
+    </ion-nav-bar>
 
   <ion-content class="padding" style="background-color:#ffffff;">
 <div class="well">
@@ -123,7 +128,7 @@
           </div>
     <br>
          <!--  <input type="number" id="LeaveDays" name="LeaveDays" min="1" max="{{leavebalance}}" step="1" value="10" ng-model="applyModel.LeaveDays" placeholder="{{leavebalance}}" required> -->
-          <select id="LeaveDays" name="LeaveDays"  ng-model="applyModel.LeaveDays" ng-click="dateShow()" required> </select>
+          <select id="LeaveDays" name="LeaveDays"  ng-model="applyModel.LeaveDays" required> </select>
 
        </label>
   </div>
